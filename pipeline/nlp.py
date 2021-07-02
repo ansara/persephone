@@ -2,9 +2,9 @@ import nltk
 from nltk import PorterStemmer, word_tokenize
 from nltk.corpus import stopwords
 
-nltk.download("punkt", download_dir="../data/nltk", quiet=True)
-nltk.download("stopwords", download_dir="../data/nltk", quiet=True)
-nltk.download("averaged_perceptron_tagger", download_dir="../data/nltk", quiet=True)
+nltk.download("punkt", download_dir="../project/data/nltk", quiet=True)
+nltk.download("stopwords", download_dir="../project/data/nltk", quiet=True)
+nltk.download("averaged_perceptron_tagger", download_dir="../project/data/nltk", quiet=True)
 
 from nltk.tag.stanford import StanfordNERTagger
 
@@ -165,7 +165,7 @@ class NLP:
 
             # check for match with Canadian cities
             if len(word) >= 4:
-                with open("../data/canadian_cities.txt") as f:
+                with open("../project/data/canadian_cities.txt") as f:
                     for line in f:
                         if line.split(",")[0].lower().strip().startswith(word):
                             locations.append(line.strip())
