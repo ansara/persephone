@@ -134,8 +134,6 @@ dmypy.json
 # Logs
 piplinelog.txt
 
-# nltk
-project/data/nltk/corpora
-project/data/nltk/taggers
-project/data/nltk/tokenizers
-project/data/case_photos/image*
+# data
+data/nltk/*
+data/case_photos/image*
