@@ -1,0 +1,700 @@
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 36f7293f5adab51d
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 252884998348f971
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 449389e4d538242f
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 75d769152d093804
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 4abbbc672fab0b02
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (302) to <GET https://anonposted.com> from <GET https://anonme.tv/can/catalog.html>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com> (referer: None)
+INFO:scrapy.core.engine:Closing spider (finished)
+ERROR:scrapy.core.engine:Scraper close failure
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/adam/persephone/persephone/rp_spider/pipelines.py", line 32, in close_spider
+    self.client.close()
+AttributeError: 'MongoDBPipeline' object has no attribute 'client'
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 437,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 4247,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 0.741743,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 7, 4, 19, 48, 16, 913215),
+ 'log_count/DEBUG': 2,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'memusage/max': 61140992,
+ 'memusage/startup': 61140992,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2021, 7, 4, 19, 48, 16, 171472)}
+INFO:scrapy.core.engine:Spider closed (finished)
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: b2cd97d4ce089cfa
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (302) to <GET https://anonposted.com> from <GET https://anonme.tv/can/catalog.html>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com> (referer: None)
+INFO:scrapy.core.engine:Closing spider (finished)
+ERROR:scrapy.core.engine:Scraper close failure
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/adam/persephone/persephone/rp_spider/pipelines.py", line 32, in close_spider
+    self.client.close()
+AttributeError: 'MongoDBPipeline' object has no attribute 'client'
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 437,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 4262,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 0.824824,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 7, 4, 19, 53, 25, 692624),
+ 'log_count/DEBUG': 2,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'memusage/max': 60932096,
+ 'memusage/startup': 60932096,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2021, 7, 4, 19, 53, 24, 867800)}
+INFO:scrapy.core.engine:Spider closed (finished)
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 0d4a521b28d05e2b
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (302) to <GET https://anonposted.com> from <GET https://anonme.tv/can/catalog.html>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com> (referer: None)
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 437,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 4222,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 0.747611,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 7, 4, 19, 53, 46, 981892),
+ 'log_count/DEBUG': 2,
+ 'log_count/INFO': 10,
+ 'memusage/max': 60981248,
+ 'memusage/startup': 60981248,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2021, 7, 4, 19, 53, 46, 234281)}
+INFO:scrapy.core.engine:Spider closed (finished)
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: df8c0fba2d60cb6a
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/catalog.html> (referer: None)
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 229,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 5229,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.469735,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 7, 4, 20, 2, 44, 50077),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 10,
+ 'memusage/max': 61091840,
+ 'memusage/startup': 61091840,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2021, 7, 4, 20, 2, 43, 580342)}
+INFO:scrapy.core.engine:Spider closed (finished)
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 482efe743f4a3bd0
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/catalog.html> (referer: None)
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 229,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 5246,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.468426,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 7, 4, 20, 3, 17, 404942),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 10,
+ 'memusage/max': 60887040,
+ 'memusage/startup': 60887040,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2021, 7, 4, 20, 3, 16, 936516)}
+INFO:scrapy.core.engine:Spider closed (finished)
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 5764a33ba3920d9b
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/catalog.html> (referer: None)
+INFO:scrapy.crawler:Received SIGINT, shutting down gracefully. Send again to force 
+INFO:scrapy.crawler:Received SIGINT twice, forcing unclean shutdown
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 7426f6646a4817b1
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6024
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/catalog.html> (referer: None)
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 229,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 5245,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.567685,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 7, 4, 20, 5, 20, 362739),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 10,
+ 'memusage/max': 60817408,
+ 'memusage/startup': 60817408,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2021, 7, 4, 20, 5, 19, 795054)}
+INFO:scrapy.core.engine:Spider closed (finished)
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 88afcb053755fdb1
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6024
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/catalog.html> (referer: None)
+INFO:scrapy.crawler:Received SIGINT, shutting down gracefully. Send again to force 
+INFO:scrapy.crawler:Received SIGINT twice, forcing unclean shutdown
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: ed5b701f1e3cf2d6
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6025
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/catalog.html> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/78.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/25.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/5.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): anonposted.com:443
+DEBUG:urllib3.connectionpool:https://anonposted.com:443 "GET /can/src/1624511674292.jpg HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): anonpremiumportal.com:443
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET /?page_id=6703 HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:https://anonpremiumportal.com:443 "GET / HTTP/1.1" 302 None
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 2186c2848610b8be
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6026
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/catalog.html> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/25.html> (referer: https://anonposted.com/can/catalog.html)
+INFO:scrapy.crawler:Received SIGINT, shutting down gracefully. Send again to force 
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: efe0e2cfdb2cf790
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6027
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/catalog.html> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/25.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/34.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/21.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/85.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/78.html> (referer: https://anonposted.com/can/catalog.html)
+INFO:scrapy.crawler:Received SIGINT, shutting down gracefully. Send again to force 
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 3cd8c1f460ed91c0
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6028
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/catalog.html> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/14.html> (referer: https://anonposted.com/can/catalog.html)
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-59-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 8481a9c492a4a465
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6029
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/catalog.html> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/14.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/85.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/25.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/5.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/21.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/can/res/34.html> (referer: https://anonposted.com/can/catalog.html)
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): anonposted.com:443
+DEBUG:urllib3.connectionpool:https://anonposted.com:443 "GET /can/src/1623550740720.jpg HTTP/1.1" 200 205781

@@ -13,7 +13,6 @@ class AnonmeItem(scrapy.Item):
 
     comments = scrapy.Field()  # uses commentItem object
 
-
 class CommentItem(scrapy.Item):
     text = scrapy.Field()
     date = scrapy.Field()

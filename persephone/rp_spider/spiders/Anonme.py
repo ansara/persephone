@@ -10,8 +10,7 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 from rp_spider.items import AnonmeItem, CommentItem
 
-password = os.environ["IBM_CLOUD_PASSWORD"]
-
+# password = os.environ["IBM_CLOUD_PASSWORD"]
 
 logging.basicConfig(filename="spiderlog.txt", level=logging.INFO)
 
@@ -19,33 +18,29 @@ logging.basicConfig(filename="spiderlog.txt", level=logging.INFO)
 class AnonmeSpider(scrapy.Spider):
     name = "anonme"
 
-    # https://anonib.archivedyou.com/ --> much more and older content
-    # http://banned.pics/can/index.html --> mirror of anonme, seems to be less recent
+    # https://anonib.archivedyou.com/ --> much more and older content --> mirror of anonme, seems to be less recent
 
     start_urls = [
-        "https://anonme.tv/can/catalog.html",
+        "https://anonposted.com/can/catalog.html",
     ]
 
-    def __init__(self):
+    # def __init__(self):
+    #     try:
+    #         client = MongoClient(
+    #             f"mongodb://admin:{password}@f443f26c-22db-4cfc-b0db-17d6de5f58ff-0.c0v4phir0ah9ul9trho0.databases.appdomain.cloud:30860,f443f26c-22db-4cfc-b0db-17d6de5f58ff-1.c0v4phir0ah9ul9trho0.databases.appdomain.cloud:30860,f443f26c-22db-4cfc-b0db-17d6de5f58ff-2.c0v4phir0ah9ul9trho0.databases.appdomain.cloud:30860/ibmclouddb?authSource=admin&replicaSet=replset",
+    #             ssl=True,
+    #             ssl_ca_certs="/home/adam/trafficking_data_jam/rp_spider/286a39f3-e1b8-4381-a83b-08ca9153eae0",
+    #             ssl_cert_reqs=ssl.CERT_NONE,
+    #         )
 
-        try:
-            client = MongoClient(
-                f"mongodb://admin:{password}@f443f26c-22db-4cfc-b0db-17d6de5f58ff-0.c0v4phir0ah9ul9trho0.databases.appdomain.cloud:30860,f443f26c-22db-4cfc-b0db-17d6de5f58ff-1.c0v4phir0ah9ul9trho0.databases.appdomain.cloud:30860,f443f26c-22db-4cfc-b0db-17d6de5f58ff-2.c0v4phir0ah9ul9trho0.databases.appdomain.cloud:30860/ibmclouddb?authSource=admin&replicaSet=replset",
-                ssl=True,
-                ssl_ca_certs="/home/adam/trafficking_data_jam/rp_spider/286a39f3-e1b8-4381-a83b-08ca9153eae0",
-                ssl_cert_reqs=ssl.CERT_NONE,
-            )
+    #         logging.info("Sucessfully connected to database within spider")
+    #         self.db = client.ibmclouddb
 
-            logging.info("Sucessfully connected to database within spider")
-            self.db = client.ibmclouddb
-
-        except ConnectionFailure:
-            logging.info("Error connecting to database within spider")
+    #     except ConnectionFailure:
+    #         logging.info("Error connecting to database within spider")
 
     def parse(self, response):
-        thread_init = response.xpath(
-            "//div[@class='threads']//div[@class='thread grid-li grid-size-small']//@href"
-        ).extract()
+        thread_init = response.xpath("//div[@class='threads']//div[@class='thread grid-li grid-size-small']//@href").extract()
         threads = []
 
         # remove bad links
@@ -70,18 +65,19 @@ class AnonmeSpider(scrapy.Spider):
             logging.info(f"Error parsing mainpage. URL: {response.url}")
 
         for thread in threads:
-            url = urljoin("https://anonme.tv", thread[0])
+            url = urljoin("https://anonposted.com", thread[0])
 
             collection_name = response.url.split("/")[3]
 
             # only process page if thread does not exist in database or comments need to be updated
-            existing_thread = self.db[collection_name].find_one({"url": url})
+            # existing_thread = self.db[collection_name].find_one({"url": url})
+            existing_thread = False
             if (
                 not existing_thread
                 or "comments" not in existing_thread
                 or len(existing_thread["comments"]) != int(thread[1])
             ):
-                yield scrapy.Request(url, callback=self.parse_thread)
+                yield scrapy.Request(url, callback=self.parse_thread, meta={'handle_httpstatus_list': [302],})
 
     def parse_thread(self, response):
 
@@ -114,7 +110,7 @@ class AnonmeSpider(scrapy.Spider):
                 ).extract()[0]
 
             original_post_image = urljoin(
-                "https://anonme.tv",
+                "https://anonposted.com",
                 response.xpath("//p[@class='fileinfo']/a/@href").extract_first(),
             )
             original_post_image_name = response.xpath(
@@ -126,7 +122,6 @@ class AnonmeSpider(scrapy.Spider):
                 "image_title": original_post_image_name,
                 "image_data": req.content,
             }
-
             req.close()
 
         except Exception:
@@ -198,7 +193,7 @@ class AnonmeSpider(scrapy.Spider):
 
                 # get list of image urls for comment and download them in base64 format
                 for image_info in image_urls_tuples:
-                    image_url = urljoin("https://anonme.tv", image_info[0])
+                    image_url = urljoin("https://anonposted.com", image_info[0])
                     req = requests.get(image_url)
 
                     if len(original_image_names) == len(image_urls):
@@ -214,4 +209,5 @@ class AnonmeSpider(scrapy.Spider):
 
             thread_item["comments"].append(comment_item)
 
+        import pdb; pdb.set_trace()
         return thread_item
