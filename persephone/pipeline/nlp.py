@@ -8,6 +8,7 @@ nltk.download("averaged_perceptron_tagger", download_dir="../project/data/nltk",
 
 from nltk.tag.stanford import StanfordNERTagger
 
+
 SLANG_DICT = {
     "a": "4",
     "b": "8",
@@ -37,7 +38,7 @@ PROV_DICT = {
     "YT": "Yukon",
 }
 
-# keywords that indicate that given comments are about a professional sex worker
+# keywords found in forums that indicate that given comments are about a professional sex worker
 PROFSSIONAL_KEYWORDS = [
     "onlyfan",
     "of",
@@ -52,7 +53,7 @@ PROFSSIONAL_KEYWORDS = [
     "star",
 ]
 
-# keywords that suggest social media
+# keywords that suggest the given photo is from social media
 SOCIAL_MEDIA_KEYWORDS = [
     "instagram",
     "facebook",
@@ -76,9 +77,8 @@ class NLP:
     # stem, tokenize, etc. then plug into process
     def analyze(self, text, subject=None):
 
-        text = text.lower()
-
-        text = self.sanitize_words(text.split())
+        text = text.lower().split()
+        text = self.sanitize_words(text)
         text = word_tokenize(text)
 
         flags = self.determine_flags(text)
@@ -87,6 +87,7 @@ class NLP:
 
         tagged_sent = self.ner.tag(text)
         named_entities = self.process(tagged_sent)
+        
         named_entities_str_tag = [
             (" ".join([token for token, tag in ne]), ne[0][1]) for ne in named_entities
         ]
@@ -175,7 +176,6 @@ class NLP:
     """
     Identify keywords that suggest if text is about a professional or social media
     """
-
     def determine_flags(self, text):
 
         stemmer = PorterStemmer()
