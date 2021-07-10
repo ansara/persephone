@@ -117,12 +117,10 @@ class AnonmeSpider(scrapy.Spider):
                 "//p[@class='fileinfo']/span[@class='unimportant']/span/text()"
             ).extract_first()
 
-            req = requests.get(original_post_image)
-            thread_item["original_post_image_info"] = {
+            thread_item["original_post_image_title"] = {
                 "image_title": original_post_image_name,
-                "image_data": req.content,
+                "image_url": original_post_image,
             }
-            req.close()
 
         except Exception:
             logging.info(f"Error parsing thread information. URL: {response.url}")
@@ -191,18 +189,17 @@ class AnonmeSpider(scrapy.Spider):
                 if len(image_urls_tuples) > 0:
                     comment_item["image_info"] = []
 
-                # get list of image urls for comment and download them in base64 format
+                # get list of image urls for comment
                 for image_info in image_urls_tuples:
                     image_url = urljoin("https://anonposted.com", image_info[0])
-                    req = requests.get(image_url)
 
                     if len(original_image_names) == len(image_urls):
                         comment_item["image_info"].append(
-                            {"image_title": image_info[1], "image_data": req.content}
+                            {"image_title": image_info[1], "image_url": image_url}
                         )
 
                     else:
-                        comment_item["image_info"].append({"image_data": req.content})
+                        comment_item["image_info"].append({"image_url": image_url})
 
             except Exception:
                 logging.info(f"Error extracting images. URL: {response.url}")
