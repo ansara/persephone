@@ -69,7 +69,7 @@ SOCIAL_MEDIA_KEYWORDS = [
 ]
 
 
-# TODO: lemenization
+# TODO: lemenization, fix get_location --> subject, documentation, states and international capability, mongodb aws
 class NLP:
     def __init__(self):
         self.ner = StanfordNERTagger(
@@ -80,26 +80,28 @@ class NLP:
     # stem, tokenize, etc. then plug into process
     def analyze(self, text, subject=None):
 
+        names, other_identifiers, locations_temp, locations = [], [], [], []
+
         text = text.lower().split()
         text = self.sanitize_words(text) #replace slang characters --> SLANG_DICT
         text_list = word_tokenize(text) #break into list of words --> this was originally after sanitize_words
 
-
-        flags = self.determine_flags(text_list)
-
         text_processed = self.remove_stopwords(text_list)
 
-        tagged_sent = self.ner.tag(text_processed)
-        named_entities = self.process(tagged_sent)
+        # see if we can get location from subject line of post
+        if subject:
+            locations.append(self.get_locations(subject, [], subject=True))
+
+        # no match using subject lines, so analyze
+        if not locations:
+            locations.append(self.get_locations(text_processed, locations))
+
+        tagged_entities = self.ner.tag(text_processed)
+        named_entities = self.process(tagged_entities)
         
         named_entities_str_tag = [
             (" ".join([token for token, tag in ne]), ne[0][1]) for ne in named_entities
         ]
-
-        names = []
-        locations = []
-        other_identifiers = []
-        locations_temp = []
 
         for item in named_entities_str_tag:
             if item[1] == "PERSON":
@@ -108,17 +110,6 @@ class NLP:
                 locations.append(item[0])
             else:
                 other_identifiers.append(item)
-
-        # see if we can get city from subject line
-        if subject:
-            locations_temp = self.get_locations(subject, [], subject=True)
-
-        if locations_temp:
-            locations = locations_temp
-        else:
-            locations = self.get_locations(text_processed, locations)
-
-        locations = list(set(locations))
 
 
         # pair initials with names -->
@@ -146,8 +137,11 @@ class NLP:
                     print("ERROR 1")
                     pass
 
-        # unique vals only
+        # unique values only
         names = list(set(names))
+        locations = list(set(locations))
+
+        flags = self.determine_flags(text_list)
 
         return {
             "names": names,
@@ -231,7 +225,7 @@ class NLP:
                 text[0] = text[0].strip().lower()
                 text[1] = text[1].strip().lower()
             except Exception:
-                pass
+                print("Formatting error with subject line, skipping")
 
         # check if word matches any province_dict
         for word in text:
@@ -255,8 +249,6 @@ class NLP:
         locations = list(set(locations))
         return locations
 
-#TODO: if a name is matched then don't match it to a location --> only have one location
-#get Initials --> Bob L
 nlp = NLP()
 # print(nlp.analyze("Any Julie B0land or Carly L from Brown University"))
-print(nlp.analyze('Anyone got S J0hns0n'))
+print(nlp.analyze('Anyone got S J0hns0n l from Saskatoon?'))

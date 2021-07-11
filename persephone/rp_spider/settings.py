@@ -13,6 +13,6 @@ DOWNLOADER_MIDDLEWARES = {
     "random_useragent.RandomUserAgentMiddleware": 400,
 }
 
-# USER_AGENT_LIST = "/home/adam/trafficking_data_jam/rp_spider/rp_spider/user-agents.txt"
+# USER_AGENT_LIST = "/home/adam/persephone/persephone/rp_spider/user-agents.txt"
 
 ITEM_PIPELINES = {"rp_spider.pipelines.MongoDBPipeline": 300}

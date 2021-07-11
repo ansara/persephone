@@ -1,6 +1,7 @@
 import logging
 import os
 import ssl
+from subprocess import call
 from urllib.parse import urljoin
 
 import pymongo
@@ -14,14 +15,13 @@ from rp_spider.items import AnonmeItem, CommentItem
 
 logging.basicConfig(filename="spiderlog.txt", level=logging.INFO)
 
+"TODO: when updating an existing thread, make sure certain information is not overwritten"
 
 class AnonmeSpider(scrapy.Spider):
     name = "anonme"
 
-    # https://anonib.archivedyou.com/ --> much more and older content --> mirror of anonme, seems to be less recent
-
     start_urls = [
-        "https://anonposted.com/can/catalog.html",
+        "https://anonposted.com",
     ]
 
     # def __init__(self):
@@ -40,6 +40,14 @@ class AnonmeSpider(scrapy.Spider):
     #         logging.info("Error connecting to database within spider")
 
     def parse(self, response):
+        for url in response.xpath("/html/body/div/div/div[4]/div/div//@href").extract():
+            yield scrapy.Request(response.url + url+'catalog.html', callback=self.parse_region)
+
+        for url in response.xpath("/html/body/div/div/div[5]/div/div/@href").extract():
+            yield scrapy.Request(response.url + url+'catalog.html', callback=self.parse_region)
+
+    def parse_region(self, response):
+
         thread_init = response.xpath("//div[@class='threads']//div[@class='thread grid-li grid-size-small']//@href").extract()
         threads = []
 
@@ -48,21 +56,22 @@ class AnonmeSpider(scrapy.Spider):
             if "res" in word and "#" not in word and "http" not in word:
                 threads.append(word)
 
-        # create list of tuples with each thread link, and number of comments in thread
+        # create list of tuples with each thread link, and number of comments in the thread
         try:
             number_comments = response.xpath(
                 "//div[@class='threads']//div[@class='thread grid-li grid-size-small']//div[@class='replies']/strong/text()"
             ).extract()
+
             for val in range(len(number_comments)):
                 number_comments[val] = number_comments[val].split(" ")[1]
 
-            print(len(threads), len(number_comments))
             threads = list(
                 zip(threads, number_comments)
-            )  # match number of comments with correct thread
+            )  # match number of comments with respective thread
 
         except Exception:
             logging.info(f"Error parsing mainpage. URL: {response.url}")
+
 
         for thread in threads:
             url = urljoin("https://anonposted.com", thread[0])
@@ -75,7 +84,7 @@ class AnonmeSpider(scrapy.Spider):
             if (
                 not existing_thread
                 or "comments" not in existing_thread
-                or len(existing_thread["comments"]) != int(thread[1])
+                or len(existing_thread["comments"]) != int(thread[1]) #new comments have been added to the thread --> extract them
             ):
                 yield scrapy.Request(url, callback=self.parse_thread, meta={'handle_httpstatus_list': [302],})
 
@@ -83,7 +92,7 @@ class AnonmeSpider(scrapy.Spider):
 
         thread_item = AnonmeItem()
 
-        thread_item["location"] = response.url.split("/")[3]
+        thread_item["location"] = response.xpath("/html/body/header/h1/text()").extract()[0].split('-')[1]
         thread_item["url"] = response.url
 
         print(response.url)
