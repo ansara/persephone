@@ -3,10 +3,10 @@ import subprocess
 details = ["name", "email", "phone_number", "location", "photo"]
 
 
-def identify_leads(photos, inferences):
-    for index, photo in enumerate(photos):
-        photo.save(f"../data/case_photos/image_{index}.jpg")
+#TODO: identify leads using facebook api --> https://developers.facebook.com/docs/graph-api/overview
+#only search using names and location --> should be able to get public profiles
 
+def identify_leads(inferences):
     cmd = "python3 social_mapper.py -f imagefolder -i '../data/case_photos/' -m fast -li -ig -fb"
     subprocess.call(cmd)
     return []

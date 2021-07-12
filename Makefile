@@ -15,6 +15,5 @@ environment:
 	pip install -r requirements.txt
 	cd ..
 
-
 reports:
 	python3 -m project/pipeline/__main__.py

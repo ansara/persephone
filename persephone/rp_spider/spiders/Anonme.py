@@ -1,6 +1,4 @@
 import logging
-import os
-import ssl
 from subprocess import call
 from urllib.parse import urljoin
 
@@ -11,11 +9,16 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 from rp_spider.items import AnonmeItem, CommentItem
 
+from mongodb import connect_db
+
 # password = os.environ["IBM_CLOUD_PASSWORD"]
 
 logging.basicConfig(filename="spiderlog.txt", level=logging.INFO)
 
 "TODO: when updating an existing thread, make sure certain information is not overwritten"
+
+user = ''
+password = ''
 
 class AnonmeSpider(scrapy.Spider):
     name = "anonme"
@@ -24,20 +27,14 @@ class AnonmeSpider(scrapy.Spider):
         "https://anonposted.com",
     ]
 
-    # def __init__(self):
-    #     try:
-    #         client = MongoClient(
-    #             f"mongodb://admin:{password}@f443f26c-22db-4cfc-b0db-17d6de5f58ff-0.c0v4phir0ah9ul9trho0.databases.appdomain.cloud:30860,f443f26c-22db-4cfc-b0db-17d6de5f58ff-1.c0v4phir0ah9ul9trho0.databases.appdomain.cloud:30860,f443f26c-22db-4cfc-b0db-17d6de5f58ff-2.c0v4phir0ah9ul9trho0.databases.appdomain.cloud:30860/ibmclouddb?authSource=admin&replicaSet=replset",
-    #             ssl=True,
-    #             ssl_ca_certs="/home/adam/trafficking_data_jam/rp_spider/286a39f3-e1b8-4381-a83b-08ca9153eae0",
-    #             ssl_cert_reqs=ssl.CERT_NONE,
-    #         )
+    def __init__(self):
+        try:
+            self.db = connect_db(user, password).ibmclouddb
+            logging.info("Sucessfully connected to database within spider")
 
-    #         logging.info("Sucessfully connected to database within spider")
-    #         self.db = client.ibmclouddb
-
-    #     except ConnectionFailure:
-    #         logging.info("Error connecting to database within spider")
+        except ConnectionFailure:
+            logging.info("Error connecting to database within spider")
+            exit(0)
 
     def parse(self, response):
         for url in response.xpath("/html/body/div/div/div[4]/div/div//@href").extract():
@@ -79,8 +76,7 @@ class AnonmeSpider(scrapy.Spider):
             collection_name = response.url.split("/")[3]
 
             # only process page if thread does not exist in database or comments need to be updated
-            # existing_thread = self.db[collection_name].find_one({"url": url})
-            existing_thread = False
+            existing_thread = self.db[collection_name].find_one({"url": url})
             if (
                 not existing_thread
                 or "comments" not in existing_thread
@@ -94,8 +90,6 @@ class AnonmeSpider(scrapy.Spider):
 
         thread_item["location"] = response.xpath("/html/body/header/h1/text()").extract()[0].split('-')[1]
         thread_item["url"] = response.url
-
-        print(response.url)
 
         try:
 

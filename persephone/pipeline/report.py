@@ -11,7 +11,7 @@ class CaseReport:
     post: PostRawData
     date_processed: datetime
     inferences: dict  # Case details extracted using NLP
-    leads: list  # Potential victims
+    leads: list  # Potential victims --> search inferences in Facebook API
 
     def __init__(self, post: PostRawData):
         self.post = post
@@ -27,24 +27,21 @@ class CaseReport:
         except Exception:
             print("NLP meta-analysis failed. Continuing without inferences.")
 
-        photos = self.post.get_photo_jpgs()
         try:
-            self.leads = profiler.identify_leads(photos, self.inferences)
+            self.leads = profiler.identify_leads(self.inferences)
         except Exception:
             print("Identity mapping failed. Continuing without leads.")
-        self.log()
+
+
+        print("Case Report complete. Submitting case for review.")
+        self.upload_to_db()
+        self.save_as_pdf()
 
     def save_as_pdf(self):
         try:
             pdf.generate_pdf(self)
         except Exception:
             pass
-
-    def log(self):
-        print("Case Report complete. Submitting case for review.")
-        self.upload_to_db()
-
-        self.save_as_pdf()
 
     def upload_to_db(self):
         print(f"Uploading Case Report to database. CaseReport ID: {self.post.id}")

@@ -1,0 +1,4 @@
+sudo apt install docker.io
+sudo service docker start
+sudo service mongodb stop --> if port 27017 already in use
+sudo docker-compose up -d

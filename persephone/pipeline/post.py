@@ -56,18 +56,3 @@ class PostRawData:
             parent_post_text=parent.get("original_post_text"),
             parent_post_id=parent.get("original_post_id"),
         )
-
-    def get_photo_jpgs(self):
-        print("Getting photos as jpegs")
-        jpgs = []
-
-        if isinstance(self.photos, dict):
-            raw = self.photos["image_data"]
-            jpgs.append(Image.open(io.BytesIO(raw)))
-        else:
-            photos_raw = [sub["image_data"] for sub in self.photos]
-            for raw in photos_raw:
-                jpg = Image.open(io.BytesIO(raw))
-                jpgs.append(jpg)
-
-        return jpgs
