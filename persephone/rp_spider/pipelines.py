@@ -1,24 +1,12 @@
 import logging
-import os
-import ssl
-
-import pymongo
-# from dotenv import load_dotenv
-from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
 
 from mongodb.db import connect_db
 
-# load_dotenv()
-# password = os.environ["IBM_CLOUD_PASSWORD"]
 logging.basicConfig(filename="piplinelog.txt", level=logging.INFO)
-
-username = 'user'
-password = 'password'
 
 class MongoDBPipeline:
     def __init__(self):
-        self.client = connect_db(username, password)
+        self.client = connect_db()
 
     def close_spider(self, spider):
         self.client.close()

@@ -3,7 +3,7 @@ from datetime import datetime
 import pdf
 import profiler
 from nlp import NLP
-from pipeline.db import connect_db
+from mongodb import connect_db
 from pipeline.post import PostRawData
 
 

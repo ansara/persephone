@@ -6,8 +6,8 @@ services:
         restart: always
         container_name: mongodb
         environment:
-            - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
-            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+            - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
+            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
             - MONGO_INITDB_DATABASE=${DATABASE_NAME}
         ports:
             - 27017:27017
@@ -17,8 +17,8 @@ services:
             - ME_CONFIG_MONGODB_SERVER=mongodb
             - ME_CONFIG_MONGODB_ENABLE_ADMIN=false
             - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
-            - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGO_ROOT_USER}
-            - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_ROOT_PASSWORD}
+            - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGO_USER}
+            - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_PASSWORD}
             - ME_CONFIG_BASICAUTH_USERNAME=${MONGOEXPRESS_LOGIN}
             - ME_CONFIG_BASICAUTH_PASSWORD=${MONGOEXPRESS_PASSWORD}
         depends_on:
@@ -30,11 +30,13 @@ services:
             context: ./rp_spider
             dockerfile: Dockerfile
 
+    pipeline:
+        build: 
+            context: ./pipeline
+            dockerfile: Dockerfile
+
     # frontend:
     #     build: ./react/Dockerfile
 
-    # pipeline:
-    #     build: ./pipeline/Dockerfile
-
-    # api:
+    # nest_api:
     #     build: ./api/Dockerfile

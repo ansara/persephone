@@ -1,13 +1,13 @@
-from pipeline.db import connect_db
+from mongodb.db import connect_db
 from pipeline.post import PostRawData
 from report import CaseReport
-from spider.items import AnonmeItem
+from rp_spider.items import AnonmeItem
 
+from pipeline.handler import process_posts_from_database
 
 def process_post(post: PostRawData):
     print(f"Generating Case Report for Post ID: {post.id}")
     CaseReport(post).process()
-
 
 def extract_posts_containing_photos(parent: AnonmeItem):
     posts = []
@@ -21,6 +21,7 @@ def extract_posts_containing_photos(parent: AnonmeItem):
         if "image_info" in comment:
             post = PostRawData.from_comment(comment, parent)
             posts.append(post)
+            
     return posts
 
 
@@ -35,3 +36,6 @@ def process_posts_from_database():
 
         for post in posts:
             process_post(post)
+
+if __name__ == "__main__":
+    process_posts_from_database()

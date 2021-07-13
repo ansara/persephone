@@ -1,4 +1,3 @@
-import io
 from dataclasses import dataclass
 
 import PIL.Image as Image

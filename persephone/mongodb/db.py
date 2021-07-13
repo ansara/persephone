@@ -6,17 +6,16 @@ import pymongo
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-#it probably makes more sense to have each application provide login credentials than just automatically giving db access to whatever calls this method
-# load_dotenv()
-# user = os.environ["MONGO_USER"]
-# password = os.environ["MONGO_PW"]
+load_dotenv()
+USER = os.environ["MONGO_USER"]
+PASSWORD = os.environ["MONGO_PASSWORD"]
 
-def connect_db(user, password):
+def connect_db():
     print("Connecting to MongoDB")
-    user = urllib.parse.quote_plus(user)
-    password = urllib.parse.quote_plus(user)
+    user = urllib.parse.quote_plus(USER)
+    password = urllib.parse.quote_plus(PASSWORD)
 
     try:
         client = MongoClient(
@@ -40,5 +39,3 @@ def test_db():
     print(f"TEST: Anonme Object Fields:   {db.can.find_one({}).keys()}")
     # db.can.find_one({"url":"https://anonme.tv/can/res/3526.html"}) --> query a specific thread using url or _id
     print(f'TEST: Comment Object Fields:   {db.can.find_one({})["comments"][0].keys()}')
-
-connect_db("admin", "TWj9%JC3NN#&^#@h9o")
