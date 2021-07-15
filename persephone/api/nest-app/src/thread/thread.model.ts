@@ -1,9 +1,9 @@
 export class Thread {
     constructor(
         public id: string,
-        public OriginalPostText: string,
-        public OriginalPostDate: string,
-        public OriginalPostImageInfo: string,
+        public originalPostText: string,
+        public originalPostDate: string,
+        public originalPostImageInfo: string,
         public url: string,
         public location: string,
         public subject: string,

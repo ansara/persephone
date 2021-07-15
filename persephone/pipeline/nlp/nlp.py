@@ -78,8 +78,8 @@ class NLP:
         )
 
     # stem, tokenize, etc. then plug into process
-    def analyze(self, text, subject=None):
-
+    def analyze(self, text, context=None):
+        report = {}
         names, other_identifiers, locations_temp, locations = [], [], [], []
 
         text = text.lower().split()
@@ -88,13 +88,6 @@ class NLP:
 
         text_processed = self.remove_stopwords(text_list)
 
-        # see if we can get location from subject line of post
-        if subject:
-            locations.append(self.get_locations(subject, [], subject=True))
-
-        # no match using subject lines, so analyze
-        if not locations:
-            locations.append(self.get_locations(text_processed, locations))
 
         tagged_entities = self.ner.tag(text_processed)
         named_entities = self.process(tagged_entities)
@@ -136,6 +129,20 @@ class NLP:
                 except Exception:
                     print("ERROR 1")
                     pass
+
+        #Advanced location analysis is currently only available for Canada 
+        #get_locations will try to identify specific Canadian cities and provinces mentioned in threads
+        #locations from  non-Canadian threads are exclusively analyzed with nlp model
+        if 'general_region' in context:
+            
+            if context['general_region']=='Canada':
+                if 'subject_line' in context:
+                    locations.append(self.get_locations(context['subject_line'], subject=True))
+
+                # no match using subject lines, so analyze
+                if not locations:
+                    locations.append(self.get_locations(text_processed))
+
 
         # unique values only
         names = list(set(names))
@@ -217,7 +224,9 @@ class NLP:
 
         return flags
 
-    def get_locations(self, text, locations, subject=False):
+    def get_locations(self, text, thread_region, subject=False):
+
+        locations = []
 
         if subject:
             try:
@@ -229,8 +238,6 @@ class NLP:
 
         # check if word matches any province_dict
         for word in text:
-
-
             if len(word) >= 2:
                 for prov_short in PROV_DICT.keys():
                     if prov_short.lower().startswith(word):
@@ -249,6 +256,5 @@ class NLP:
         locations = list(set(locations))
         return locations
 
-nlp = NLP()
-# print(nlp.analyze("Any Julie B0land or Carly L from Brown University"))
-print(nlp.analyze('Anyone got S J0hns0n l from Saskatoon?'))
+test = NLP()
+test.analyze("HELLO this is a test, I am from Regina Saskatchewan")

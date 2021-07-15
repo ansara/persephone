@@ -1,6 +1,5 @@
 from datetime import datetime
 
-import pdf
 import profiler
 from nlp import NLP
 from mongodb import connect_db
@@ -22,7 +21,7 @@ class CaseReport:
     def process(self):
         text_evidence = self.post.get_text_evidence()
         try:
-            self.inferences = NLP().analyze(text_evidence, self.post.thread_subject)
+            self.inferences = NLP().analyze(text_evidence, self.post.thread_subject, self.post.region_context)
             print(f"NLP Analysis: {self.inferences}")
         except Exception:
             print("NLP meta-analysis failed. Continuing without inferences.")

@@ -3,6 +3,7 @@ from dataclasses import dataclass
 import PIL.Image as Image
 
 
+#TODO: region_context
 @dataclass(frozen=True)
 class PostRawData:
     post_type: str
@@ -14,6 +15,8 @@ class PostRawData:
     photos: list
     parent_post_text: str
     parent_post_id: str
+    region_context: str
+
 
     def get_text_evidence(self) -> str:
         photos = self.photos

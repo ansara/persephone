@@ -9,17 +9,17 @@ from pymongo.errors import ConnectionFailure
 from dotenv import load_dotenv
 
 load_dotenv()
-USER = os.environ["MONGO_USER"]
-PASSWORD = os.environ["MONGO_PASSWORD"]
+USER = urllib.parse.quote_plus(os.environ["MONGO_USER"])
+PASSWORD = urllib.parse.quote_plus(os.environ["MONGO_PASSWORD"])
+PORT = urllib.parse.quote_plus(os.environ['MONGO_PORT'])
+HOST = urllib.parse.quote_plus(os.environ['MONGO_HOST'])
 
 def connect_db():
     print("Connecting to MongoDB")
-    user = urllib.parse.quote_plus(USER)
-    password = urllib.parse.quote_plus(PASSWORD)
-
+    
     try:
         client = MongoClient(
-            f'mongodb://{user}:{password}@localhost:27017/',
+            f'mongodb://{USER}:{PASSWORD}@{HOST}:{PORT}/',
             ssl=True,
             ssl_cert_reqs=ssl.CERT_NONE,
         )
@@ -29,6 +29,9 @@ def connect_db():
     except ConnectionFailure as err:
         print("Unable to connect to database.")
 
+#add existing data to database if data folder exists
+def init_db():
+    pass
 
 def test_db():
     db = connect_db()

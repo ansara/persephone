@@ -35,7 +35,8 @@ def process_posts_from_database():
         posts = extract_posts_containing_photos(anonme_item)
 
         for post in posts:
-            process_post(post)
+            if post['processed'] == False:
+                process_post(post)
 
 if __name__ == "__main__":
     process_posts_from_database()
