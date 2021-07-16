@@ -1,37 +1,29 @@
 import os
-import ssl
 import urllib
 
-import pymongo
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 
 from dotenv import load_dotenv
 
 load_dotenv()
-USER = urllib.parse.quote_plus(os.environ["MONGO_USER"])
-PASSWORD = urllib.parse.quote_plus(os.environ["MONGO_PASSWORD"])
+USER = urllib.parse.quote_plus(os.environ['MONGO_USER'])
+PASSWORD = urllib.parse.quote_plus(os.environ['MONGO_PASSWORD'])
 PORT = urllib.parse.quote_plus(os.environ['MONGO_PORT'])
 HOST = urllib.parse.quote_plus(os.environ['MONGO_HOST'])
+
 
 def connect_db():
     print("Connecting to MongoDB")
     
     try:
-        client = MongoClient(
-            f'mongodb://{USER}:{PASSWORD}@{HOST}:{PORT}/',
-            ssl=True,
-            ssl_cert_reqs=ssl.CERT_NONE,
-        )
+        client = MongoClient(f'mongodb://{USER}:{PASSWORD}@{HOST}:{PORT}/persephonedb').persephonedb
 
-        print("Successfully connected to database")
+        print(f"Successfully connected to persephonedb as {USER}")
+
         return client
     except ConnectionFailure as err:
         print("Unable to connect to database.")
-
-#add existing data to database if data folder exists
-def init_db():
-    pass
 
 def test_db():
     db = connect_db()

@@ -13,5 +13,4 @@ export class ReportService{
         const reports = await this.reportModel.find({ extractedNames: name, threadLocation: location}).exec();
         return reports as Report[];
     }
-
 }

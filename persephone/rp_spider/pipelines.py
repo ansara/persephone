@@ -6,12 +6,13 @@ logging.basicConfig(filename="piplinelog.txt", level=logging.INFO)
 
 class MongoDBPipeline:
     def __init__(self):
-        self.client = connect_db()
+        self.connection = connect_db()
 
     def close_spider(self, spider):
-        self.client.close()
+        self.connection.close()
 
     def process_item(self, item, spider):
+        import pdb; pdb.set_trace()
         try:
 
             existing_thread = self.connection[item["location"]].find_one(
@@ -35,11 +36,12 @@ class MongoDBPipeline:
                     print("Successfully added comment field to existing thread")
 
             else:
-                self.connection.can.insert_one(dict(item))
+                self.connection[item["location"]].insert_one(dict(item))
                 print("Successfully added new thread to db")
                 print(item["url"])
 
         except Exception:
+            import pdb; pdb.set_trace()
             logging.info(
                 f"Error inserting item into database. (Likely image is too large)\n Item: {item['url']}"
             )

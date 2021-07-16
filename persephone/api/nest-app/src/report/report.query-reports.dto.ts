@@ -3,8 +3,9 @@ import { IsNotEmpty } from 'class-validator'
 export class QueryReportsDto{
 
     // @ApiModelProperty()
-    @IsNotEmpty()
     // @IsString()
+
+    @IsNotEmpty()
     name: string;
 
     @IsNotEmpty()

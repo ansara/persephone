@@ -1,4 +1,5 @@
 import logging
+from pdb import set_trace
 from subprocess import call
 from urllib.parse import urljoin
 
@@ -9,7 +10,7 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 from rp_spider.items import AnonmeItem, CommentItem
 
-from mongodb import connect_db
+from mongodb.db import connect_db
 
 # password = os.environ["IBM_CLOUD_PASSWORD"]
 
@@ -17,8 +18,6 @@ logging.basicConfig(filename="spiderlog.txt", level=logging.INFO)
 
 "TODO: when updating an existing thread, make sure certain information is not overwritten"
 
-user = ''
-password = ''
 
 class AnonmeSpider(scrapy.Spider):
     name = "anonme"
@@ -29,11 +28,12 @@ class AnonmeSpider(scrapy.Spider):
 
     def __init__(self):
         try:
-            self.db = connect_db(user, password).ibmclouddb
+            self.db = connect_db().persephonedb
             logging.info("Sucessfully connected to database within spider")
 
         except ConnectionFailure:
             logging.info("Error connecting to database within spider")
+            import pdb; pdb.set_trace()
             exit(0)
 
     def parse(self, response):
@@ -209,5 +209,5 @@ class AnonmeSpider(scrapy.Spider):
 
             thread_item["comments"].append(comment_item)
 
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         return thread_item

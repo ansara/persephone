@@ -1,0 +1,2 @@
+frontend will talk to backend through nest api
+scrapy doesn't use api, just inserts directly into database

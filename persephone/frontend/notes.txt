@@ -1,0 +1,2 @@
+search bar --> similar to haveIbeenpwd
+Person selects country/state, enters in first name --> no last name allowed
