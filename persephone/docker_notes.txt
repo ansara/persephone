@@ -1,9 +1,0 @@
-sudo apt install docker.io
-sudo service docker start
-sudo service mongodb stop --> if port 27017 already in use
-sudo docker-compose build --no-cache --> after updating dockerfile
-sudo docker-compose up -d
-
-
-mongo localhost:27017/admin -u admin -p 12345678
-mongo localhost:27017/persephonedb -u mongouser -p 12345678

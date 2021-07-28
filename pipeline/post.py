@@ -37,7 +37,7 @@ class PostRawData:
             date_posted=post.get("original_post_date"),
             thread_subject=post.get("subject"),
             text=post.get("original_post_text"),
-            photos=post.get("original_post_image"),
+            photos=post.get("original_post_image_info"),
             location = post.get("location"),
             parent_post_text=None,
             parent_post_id=None,
