@@ -36,7 +36,7 @@ PROV_DICT = {
     "YT": "Yukon",
 }
 
-# keywords found in forums that indicate that given comments are about a professional sex worker
+# keywords found in forums that indicate that given comments are about a professional sex worker or social media image
 PROFSSIONAL_KEYWORDS = [
     "onlyfan",
     "of",

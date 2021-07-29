@@ -1,11 +1,8 @@
 import logging
-from subprocess import call
 from urllib.parse import urljoin
 import datetime
 import pytz
 
-import pymongo
-import requests
 import scrapy
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
@@ -13,7 +10,7 @@ from rp_spider.items import AnonmeItem, CommentItem
 
 from mongodb.db import connect_db
 
-logging.basicConfig(filename="spiderlog.txt", level=logging.INFO)
+logging.basicConfig(filename="spiderlog.txt", level=logging.ERROR)
 
 "TODO: when updating an existing thread, make sure certain information is not overwritten"
 class AnonmeSpider(scrapy.Spider):
@@ -28,16 +25,15 @@ class AnonmeSpider(scrapy.Spider):
             self.db = connect_db()
             logging.info("Sucessfully connected to database within spider")
 
-        except ConnectionFailure:
-            logging.info("Error connecting to database within spider")
-            import pdb; pdb.set_trace()
+        except ConnectionFailure as e:
+            logging.error(f"Error connecting to database within spider: {e}")
             exit(0)
 
     def parse(self, response):
         for url in response.xpath("/html/body/div/div/div[4]/div/div//@href").extract():
             yield scrapy.Request(response.url + url+'catalog.html', callback=self.parse_region)
 
-        for url in response.xpath("/html/body/div/div/div[5]/div/div/@href").extract():
+        for url in response.xpath("/html/body/div/div/div[5]/div/div//@href").extract():
             yield scrapy.Request(response.url + url+'catalog.html', callback=self.parse_region)
 
     def parse_region(self, response):
@@ -63,8 +59,8 @@ class AnonmeSpider(scrapy.Spider):
                 zip(threads, number_comments)
             )  # match number of comments with respective thread
 
-        except Exception:
-            logging.info(f"Error parsing mainpage. URL: {response.url}")
+        except Exception as e:
+            logging.error(f"Error parsing mainpage. URL: {response.url}: {e}")
 
 
         for thread in threads:
@@ -121,8 +117,8 @@ class AnonmeSpider(scrapy.Spider):
                 "image_url": original_post_image,
             }
 
-        except Exception:
-            logging.info(f"Error parsing thread information. URL: {response.url}")
+        except Exception as e:
+            logging.error(f"Error parsing thread information. URL: {response.url}: {e}")
 
         thread_item["comments"] = []
 
@@ -163,9 +159,9 @@ class AnonmeSpider(scrapy.Spider):
                 if mentioned_by:
                     comment_item["mentioned_by"] = mentioned_by.split(" ")
 
-            except Exception:
-                logging.info(
-                    f"Error extracting comment information. URL: {response.url}"
+            except Exception as e:
+                logging.error(
+                    f"Error extracting comment information. URL: {response.url}: {e}"
                 )
 
             try:
@@ -200,8 +196,9 @@ class AnonmeSpider(scrapy.Spider):
                     else:
                         comment_item["image_info"].append({"image_url": image_url})
 
-            except Exception:
-                logging.info(f"Error extracting images. URL: {response.url}")
+            except Exception as e:
+                logging.error(f"Error extracting images. URL: {response.url}: {e}")
 
             thread_item["comments"].append(comment_item)
+    
         return thread_item

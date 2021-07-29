@@ -3,6 +3,9 @@ import nltk
 from nltk import PorterStemmer, word_tokenize
 from nltk import tag
 from nltk.corpus import stopwords
+import logging
+
+logging.basicConfig(filename="nlp_log.txt", level=logging.ERROR)
 
 from .dictionaries import *
 
@@ -58,9 +61,8 @@ class NLP:
                         names.append(word[0])
                     elif word[1] == "LOCATION" and word[1] not in LOCATION_STOPWORDS:
                         locations.append(word[0])
-            except Exception:
-                print("ERROR NLP")
-                import pdb;pdb.set_trace()
+            except Exception as e:
+                logging.error(f'Error processing names: {e}')
 
             if word[1] != 'O' and word[1]!='PERSON' and word[1]!='LOCATION':
                 other_identifiers.append(word)
@@ -82,8 +84,8 @@ class NLP:
 
                     if len(adjacent_word) == 1:
                         names.append(name + " " + adjacent_word.upper() + ".")
-                except Exception:
-                    print("ERROR")
+                except Exception as e:
+                    logging.error(f'Error when matching name initial to adjacent character: {e}')
 
                 try:
                     previous_word = text[text.index(name[0]) - 1]
@@ -91,8 +93,8 @@ class NLP:
                     if len(previous_word) == 1:
                         names.append(previous_word.upper() + ". " + name)
 
-                except Exception:
-                    print("ERROR 1")
+                except Exception as e:
+                    logging.error(f'Error when matching name initial to previous character: {e}')
 
         # Advanced location analysis is currently only available for Canada
         # get_locations will try to identify specific Canadian cities and provinces mentioned in threads
@@ -207,13 +209,16 @@ class NLP:
 
 
             # check for partial match with Canadian cities
-            if len(word) >= 6:
-                with open("./pipeline/nlp/canadian_cities.txt") as f:
-                    for line in f:
-                        line = line.lower().split(',')
-                        city, prov = line[0].strip(), line[1].strip()
+            try:
+                if len(word) >= 6:
+                    with open("./pipeline/nlp/canadian_cities.txt") as f:
+                        for line in f:
+                            line = line.lower().split(',')
+                            city, prov = line[0].strip(), line[1].strip()
 
-                        if city.startswith(word):
-                            locations.append((city, prov))
+                            if city.startswith(word):
+                                locations.append((city, prov))
+            except Exception as e:
+                logging.error(f'Error processing Canadian cities text file: {e}')
 
         return locations

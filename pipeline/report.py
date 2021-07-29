@@ -52,7 +52,7 @@ class CaseReport:
                 'aggregate_names': aggregate_names,
                 'comment_inferences' : comment_inferences,
             }
-
+            
             import pdb; pdb.set_trace()
             self.upload_to_db()
 

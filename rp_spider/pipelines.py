@@ -19,7 +19,7 @@ class MongoDBPipeline:
             )
 
             # thread already has been tracked, just add new comments
-            if existing_thread and True == False:
+            if existing_thread:
                 if "comments" in existing_thread:
                     self.connection.update_one(
                         {"url": item["url"]},

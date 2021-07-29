@@ -14,9 +14,9 @@ services:
         ports:
             - 27017:27017
         volumes: 
-            - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
+            - ./tmp:/docker-entrypoint-initdb.d/mongo-init.sh #TODO: Fix this, it's creating an unncessary directory
     spider:
-        build: 
+        build:
             context: ./rp_spider
             dockerfile: Dockerfile
 
