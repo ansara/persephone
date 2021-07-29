@@ -16,7 +16,7 @@ class AnonmeItem(scrapy.Item):
 class CommentItem(scrapy.Item):
     text = scrapy.Field()
     date = scrapy.Field()
-    comment_id = scrapy.Field()
-    comment_link = scrapy.Field()
+    id = scrapy.Field()
+    link = scrapy.Field()
     reply_ids = scrapy.Field()
     image_info = scrapy.Field()  # tuple of image name and url

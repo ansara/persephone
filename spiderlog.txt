@@ -4995,3 +4995,227 @@ DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/nh/res/44.htm
 DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/nh/res/72.html> (referer: https://anonposted.com/nh/catalog.html)
 DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/nh/res/69.html> (referer: https://anonposted.com/nh/catalog.html)
 DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/nh/res/57.html> (referer: https://anonposted.com/nh/catalog.html)
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-63-generic-x86_64-with-glibc2.29
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-63-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 5a1a3a87ac6cb1bd
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:root:Sucessfully connected to database within spider
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-63-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 1e8d662566236707
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:root:Sucessfully connected to database within spider
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-63-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: e6e004fca4bf219d
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:root:Sucessfully connected to database within spider
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/geo/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ark/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/dc/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ariz/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/con/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/col/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/cal/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/del/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wash/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/fl/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/alb/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ala/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wv/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wisc/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wy/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/geo/res/12.html> (referer: https://anonposted.com/geo/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/geo/res/17.html> (referer: https://anonposted.com/geo/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/vir/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/geo/res/5.html> (referer: https://anonposted.com/geo/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ver/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/geo/res/14.html> (referer: https://anonposted.com/geo/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/geo/res/15.html> (referer: https://anonposted.com/geo/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/geo/res/11.html> (referer: https://anonposted.com/geo/catalog.html)
+INFO:scrapy.crawler:Received SIGINT, shutting down gracefully. Send again to force 
+INFO:root:Error parsing thread information. URL: https://anonposted.com/geo/res/12.html
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/cal/res/30.html> (referer: https://anonposted.com/cal/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/cal/res/94.html> (referer: https://anonposted.com/cal/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/cal/res/206.html> (referer: https://anonposted.com/cal/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/cal/res/169.html> (referer: https://anonposted.com/cal/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/cal/res/125.html> (referer: https://anonposted.com/cal/catalog.html)
+INFO:scrapy.core.engine:Closing spider (shutdown)
+INFO:scrapy.crawler:Received SIGINT twice, forcing unclean shutdown
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-63-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 364ecf03db6d6808
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:root:Sucessfully connected to database within spider
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6024
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/mai/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/kan/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/illi/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/lou/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/mas/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/iow/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/haw/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ida/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/mary/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/indi/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ken/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/geo/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/del/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/dc/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/fl/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wy/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wash/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/con/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/illi/res/154.html> (referer: https://anonposted.com/illi/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wisc/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/illi/res/252.html> (referer: https://anonposted.com/illi/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wv/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/illi/res/4.html> (referer: https://anonposted.com/illi/catalog.html)
+INFO:root:Error parsing thread information. URL: https://anonposted.com/illi/res/154.html
+ERROR:scrapy.core.scraper:Spider error processing <GET https://anonposted.com/illi/res/154.html> (referer: https://anonposted.com/illi/catalog.html)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/home/adam/persephone/rp_spider/spiders/Anonme.py", line 209, in parse_thread
+    return thread_item
+  File "/home/adam/persephone/rp_spider/spiders/Anonme.py", line 209, in parse_thread
+    return thread_item
+  File "/usr/lib/python3.8/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python3.8/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+INFO:root:Error parsing thread information. URL: https://anonposted.com/illi/res/252.html
+INFO:scrapy.crawler:Received SIGINT, shutting down gracefully. Send again to force 
+INFO:scrapy.utils.log:Scrapy 1.7.3 started (bot: rp_spider)
+INFO:scrapy.utils.log:Versions: lxml 4.5.0.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.8.10 (default, Jun  2 2021, 10:49:15) - [GCC 9.4.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.8.0-63-generic-x86_64-with-glibc2.29
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'rp_spider', 'NEWSPIDER_MODULE': 'rp_spider.spiders', 'SPIDER_MODULES': ['rp_spider.spiders']}
+INFO:scrapy.extensions.telnet:Telnet Password: 8aa9c62b26dcabe7
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:root:Sucessfully connected to database within spider
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['rp_spider.pipelines.MongoDBPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6025
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/mary/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ken/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ida/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/kan/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/indi/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/illi/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/geo/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/iow/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/lou/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/mas/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/haw/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/fl/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/del/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/dc/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/con/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ver/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wisc/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/col/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wy/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wv/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/wash/catalog.html> (referer: https://anonposted.com)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ken/res/183.html> (referer: https://anonposted.com/ken/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ken/res/21.html> (referer: https://anonposted.com/ken/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ken/res/55.html> (referer: https://anonposted.com/ken/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ken/res/5.html> (referer: https://anonposted.com/ken/catalog.html)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://anonposted.com/ken/res/130.html> (referer: https://anonposted.com/ken/catalog.html)

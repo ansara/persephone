@@ -103,11 +103,9 @@ class AnonmeSpider(scrapy.Spider):
                 "//div[@class='post op']//*[@class='post_no']/text()"
             ).extract()[1]
 
-            if response.xpath(
-                "//div[@class='post op']/*[@class='subject']/text()"
-            ).extract():
+            if response.xpath("//div[@class='post op']//*[@class='subject']/text()").extract():
                 thread_item["subject"] = response.xpath(
-                    "//div[@class='post op']/*[@class='subject']/text()"
+                    "//div[@class='post op']//*[@class='subject']/text()"
                 ).extract()[0]
 
             original_post_image = urljoin(
@@ -206,5 +204,4 @@ class AnonmeSpider(scrapy.Spider):
                 logging.info(f"Error extracting images. URL: {response.url}")
 
             thread_item["comments"].append(comment_item)
-
         return thread_item

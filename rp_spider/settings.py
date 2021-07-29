@@ -13,6 +13,6 @@ DOWNLOADER_MIDDLEWARES = {
     "random_useragent.RandomUserAgentMiddleware": 400,
 }
 
-USER_AGENT_LIST = "./user-agents.txt"
+USER_AGENT_LIST = "./rp_spider/user-agents.txt"
 
 ITEM_PIPELINES = {"rp_spider.pipelines.MongoDBPipeline": 300}

@@ -1,12 +1,9 @@
 from mongodb.db import connect_db
-from post import PostRawData
 from report import CaseReport
-from rp_spider.items import AnonmeItem
 
-def process_thread(thread: PostRawData):
+def process_thread(thread):
     # print(f"Generating Case Report for Thread: {thread.id}")
     CaseReport(thread).process_thread()
-
 
 def process_posts_from_database():
     print("Launching Persephone Alert System")

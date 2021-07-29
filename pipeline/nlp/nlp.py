@@ -4,71 +4,11 @@ from nltk import PorterStemmer, word_tokenize
 from nltk import tag
 from nltk.corpus import stopwords
 
+from .dictionaries import *
+
 nltk.download("punkt", quiet=True)
 nltk.download("stopwords", quiet=True)
 nltk.download("averaged_perceptron_tagger", quiet=True)
-
-
-SLANG_DICT = {
-    "4": "a",
-    "8": "b",
-    "3": "e",
-    "6": "g",
-    "1": "i",
-    "0": "o",
-    "7": "t",
-    "2": "z",
-    "!": "l",
-    "$": "s",
-    "@": "a",
-    "*": "",
-    "(": "",
-    ")": "",
-    "#": "",
-}
-
-PROV_DICT = {
-    "AB": "Alberta",
-    "BC": "British Columbia",
-    "MB": "Manitoba",
-    "NB": "New Brunswick",
-    "NL": "Newfoundland and Labrador",
-    "NS": "Nova Scotia",
-    "NT": "Northwest Territories",
-    "NUN": "Nunavut",
-    "ONT": "Ontario",
-    "PEI": "Prince Edward Island",
-    "QC": "Quebec",
-    "SK": "Saskatchewan",
-    "YT": "Yukon",
-}
-
-# keywords found in forums that indicate that given comments are about a professional sex worker
-PROFSSIONAL_KEYWORDS = [
-    "onlyfan",
-    "of",
-    "porn",
-    "pornhub",
-    "ph",
-    "hub",
-    "onlyslut",
-    "professional",
-    "pro",
-    "pornstar",
-    "star",
-]
-
-# keywords that suggest the given photo is from social media
-SOCIAL_MEDIA_KEYWORDS = [
-    "instagram",
-    "facebook",
-    "snapchat",
-    "sc",
-    "fb",
-    "insta",
-    "vsco",
-    "model",
-]
 
 ENGLISH_STOPWORDS = set(stopwords.words("english"))
 
@@ -90,7 +30,6 @@ class NLP:
     def analyze(self, text, thread_region):
         names, other_identifiers, locations = [], [], []
 
-
         # replace slang characters --> SLANG_DICT
         text = self.sanitize_words(text.lower().split()) #capitalization is so inconsistant that its best to just ignore it
         text = word_tokenize(text)  # break into list of words
@@ -107,7 +46,7 @@ class NLP:
 
             try:
                 # if next word is the same classification of given word, and they are adjacent then pair them together
-                if (next_word[1] == word[1] and text.index(word[0]) == text.index(next_word[0])-1):
+                if (next_word[0]!='' and next_word[1] == word[1] and text.index(word[0]) == text.index(next_word[0])-1):
                     if word[1] == 'PERSON':
                         names.append((word[0], next_word[0]))
                     elif word[1] == 'LOCATION' and next_word[0] not in LOCATION_STOPWORDS: #ignore words such as "city" or "town" when combining location entities
@@ -120,10 +59,16 @@ class NLP:
                     elif word[1] == "LOCATION" and word[1] not in LOCATION_STOPWORDS:
                         locations.append(word[0])
             except Exception:
+                print("ERROR NLP")
                 import pdb;pdb.set_trace()
 
             if word[1] != 'O' and word[1]!='PERSON' and word[1]!='LOCATION':
                 other_identifiers.append(word)
+
+        # additionally check list of female names for match
+        for word in text_no_stopwords:
+            if word in FEMALE_NAME_LIST:
+                names.append(word)
 
         # pair initials with names --> 
         for name in names:
@@ -221,7 +166,6 @@ class NLP:
     """
     Identify keywords that suggest if text is about a professional sex worker or social media --> these comments are not what we are targeting
     """
-
     def determine_flags(self, text):
 
         stemmer = PorterStemmer()
