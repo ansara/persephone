@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ThreadModule } from './thread/thread.module';
 
 import { MongooseModule } from '@nestjs/mongoose';
 import { ReportModule } from './report/report.module';
+import { ThreadModule } from './thread/thread.module';
 
 const mongoURL = 'mongodb://localhost/persephonedb'
 

@@ -1,0 +1,16 @@
+ERROR:root:Error when matching name initial to adjacent character: 's' is not in list
+ERROR:root:Error when matching name initial to previous character: 's' is not in list
+ERROR:root:Error when matching name initial to adjacent character: 's' is not in list
+ERROR:root:Error when matching name initial to previous character: 's' is not in list
+ERROR:root:Error when matching name initial to adjacent character: 's' is not in list
+ERROR:root:Error when matching name initial to previous character: 's' is not in list
+ERROR:root:Error when matching name initial to adjacent character: 's' is not in list
+ERROR:root:Error when matching name initial to previous character: 's' is not in list
+ERROR:root:Error when matching name initial to adjacent character: 'b' is not in list
+ERROR:root:Error when matching name initial to previous character: 'b' is not in list
+ERROR:root:Error when matching name initial to adjacent character: 'b' is not in list
+ERROR:root:Error when matching name initial to previous character: 'b' is not in list
+ERROR:root:Error when matching name initial to adjacent character: 'b' is not in list
+ERROR:root:Error when matching name initial to previous character: 'b' is not in list
+ERROR:root:Error when matching name initial to adjacent character: 'b' is not in list
+ERROR:root:Error when matching name initial to previous character: 'b' is not in list

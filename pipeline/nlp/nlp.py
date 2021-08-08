@@ -1,46 +1,40 @@
-from nltk.tag.stanford import StanfordNERTagger
-import nltk
-from nltk import PorterStemmer, word_tokenize
-from nltk import tag
-from nltk.corpus import stopwords
 import logging
-
 logging.basicConfig(filename="nlp_log.txt", level=logging.ERROR)
 
 from .dictionaries import *
+
+import nltk
+from nltk.tag.stanford import StanfordNERTagger
+from nltk import PorterStemmer, word_tokenize
+from nltk.corpus import stopwords
 
 nltk.download("punkt", quiet=True)
 nltk.download("stopwords", quiet=True)
 nltk.download("averaged_perceptron_tagger", quiet=True)
 
 ENGLISH_STOPWORDS = set(stopwords.words("english"))
-
 LOCATION_STOPWORDS = ['city', 'town', 'province', 'state']
 
-# TODO: lemenization, fix get_location --> subject, documentation, states and international capability, mongodb aws
 class NLP:
     def __init__(self):
         self.ner = StanfordNERTagger(
             "/home/adam/persephone/pipeline/nlp/english.muc.7class.caseless.distsim.crf.ser.gz",
             "/home/adam/persephone/pipeline/nlp/stanford-ner.jar",
         )
+    
 
     # stem, tokenize, etc. then plug into process
-
-    '''
-    @context --> dictionary that holds region_data of the thread amoung other things
-    '''
     def analyze(self, text, thread_region):
         names, other_identifiers, locations = [], [], []
 
-        # replace slang characters --> SLANG_DICT
-        text = self.sanitize_words(text.lower().split()) #capitalization is so inconsistant that its best to just ignore it
+        #capitalization is so inconsistant that its best to just ignore it
+        text = self.sanitize_words(text.lower().split())
         text = word_tokenize(text)  # break into list of words
 
         #model will more accurately identify names without stopwords, but we will still reference text for context
         text_no_stopwords = self.remove_stopwords(text) 
         tagged_entities = self.ner.tag(text_no_stopwords)
-        tagged_entities.append(('', 'O')) #needed so that the final word is processed properly
+        tagged_entities.append(('', 'O')) #needed so that the final word is processed properly below
 
         #trying to match entity classifications with adjacent words in comment:
         comment_list = zip(tagged_entities, tagged_entities[1:])
@@ -68,48 +62,25 @@ class NLP:
                 other_identifiers.append(word)
 
         # additionally check list of female names for match
-        for word in text_no_stopwords:
-            if word in FEMALE_NAME_LIST:
-                names.append(word)
 
-        # pair initials with names --> 
-        for name in names:
-            
-            # only a single name --> no initals or fullname
-            if len(name) == 1:
-
-                # see if previous or next word is a single character
-                try:
-                    adjacent_word = text[text.index(name[0]) + 1]
-
-                    if len(adjacent_word) == 1:
-                        names.append(name + " " + adjacent_word.upper() + ".")
-                except Exception as e:
-                    logging.error(f'Error when matching name initial to adjacent character: {e}')
-
-                try:
-                    previous_word = text[text.index(name[0]) - 1]
-
-                    if len(previous_word) == 1:
-                        names.append(previous_word.upper() + ". " + name)
-
-                except Exception as e:
-                    logging.error(f'Error when matching name initial to previous character: {e}')
 
         # Advanced location analysis is currently only available for Canada
         # get_locations will try to identify specific Canadian cities and provinces mentioned in threads
         # locations from  non-Canadian threads are exclusively analyzed with nlp model
-
         if thread_region == 'Canada':
-
-            #try to find matches in text
             locations.extend(self.get_locations(text_no_stopwords))
 
+        for word in text_no_stopwords:
+            if len(word) >= 3:
+                for name in FEMALE_NAME_LIST:
+                    if name.startswith(word.lower()):
+                        names.append(word)
+                        break
 
-        # unique values only
+        names.extend(self.pair_name_initials(names, text))
+
         names = list(set(names))
         locations = list(set(locations))
-
         flags = self.determine_flags(text)
 
         return {
@@ -143,7 +114,7 @@ class NLP:
         for word in text_list:
 
             # want to keep single characters because they are often used as initials
-            if word not in ENGLISH_STOPWORDS or len(word) == 1:
+            if word.lower() not in ENGLISH_STOPWORDS or len(word) == 1:
                 filtered_text.append(word)
 
         return filtered_text
@@ -188,24 +159,61 @@ class NLP:
         flags["keywords_found"] = list(set(flags["keywords_found"]))
 
         return flags
+    
+    # pair initials with names --> 
+    def pair_name_initials(self, names, text):
+
+        names_initialed = []
+
+        for name in names:
+
+            # only a single name --> no initals or fullname tuples
+            if len(name) > 2:
+                # see if previous or next word is a single character
+                try:
+                    adjacent_word = text[text.index(name) + 1]
+
+                    #remove period from end of intial if needed
+                    if adjacent_word[-1] == '.':
+                        adjacent_word=adjacent_word[:-1]
+
+                    if len(adjacent_word) == 1 and adjacent_word.isalnum():
+                        names_initialed.append((name, adjacent_word))
+
+                except Exception as e:
+                    logging.error(f'Error when matching name initial to adjacent character: {e}')
+
+                try:
+                    previous_word = text[text.index(name) - 1]
+
+                    if previous_word[-1] == '.':
+                        previous_word=previous_word[:-1]
+
+                    if len(previous_word) == 1 and previous_word.isalnum():
+                        names_initialed.append((previous_word, name))
+
+                except Exception as e:
+                    logging.error(f'Error when matching name initial to previous character: {e}')
+
+
+        return names_initialed
 
     '''Currently only Canadian cities'''
     def get_locations(self, text):
-
         locations = []
 
         # check if word matches any province_dict
         for word in text:
-            word = word.lstrip()
+            word = word.lower().lstrip()
             if len(word) >= 2:
                 for prov_short in PROV_DICT.keys():
-                    if prov_short.lower().startswith(word):
-                        locations.append(PROV_DICT[prov_short].lower())
+                    if prov_short.startswith(word):
+                        locations.append(PROV_DICT[prov_short])
                         
             if len(word) >= 4:
                 for prov_name in PROV_DICT.values():
-                    if prov_name.lower().startswith(word):
-                        locations.append(prov_name.lower())
+                    if prov_name.startswith(word):
+                        locations.append(prov_name)
 
 
             # check for partial match with Canadian cities
@@ -218,6 +226,7 @@ class NLP:
 
                             if city.startswith(word):
                                 locations.append((city, prov))
+
             except Exception as e:
                 logging.error(f'Error processing Canadian cities text file: {e}')
 

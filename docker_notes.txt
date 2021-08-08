@@ -9,3 +9,5 @@ mongo localhost:27017/admin -u admin -p 12345678
 mongo localhost:27017/persephonedb -u mongouser -p 12345678
 
 export PYTHONPATH='/home/adam/persephone'
+
+react: npm install react-router-dom

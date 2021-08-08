@@ -1,0 +1,3 @@
+npm install react
+npm install bootstrap
+npm install react-simple-maps

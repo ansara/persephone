@@ -1,5 +1,5 @@
 
-name_file = open('./pipeline/nlp/female_names.txt', 'r')
+name_file = open('./pipeline/nlp/english_names_female.txt', 'r')
 FEMALE_NAME_LIST = [line.strip().lower() for line in name_file.readlines()]
 
 SLANG_DICT = {
@@ -21,19 +21,19 @@ SLANG_DICT = {
 }
 
 PROV_DICT = {
-    "AB": "Alberta",
-    "BC": "British Columbia",
-    "MB": "Manitoba",
-    "NB": "New Brunswick",
-    "NL": "Newfoundland and Labrador",
-    "NS": "Nova Scotia",
-    "NT": "Northwest Territories",
-    "NUN": "Nunavut",
-    "ONT": "Ontario",
-    "PEI": "Prince Edward Island",
-    "QC": "Quebec",
-    "SK": "Saskatchewan",
-    "YT": "Yukon",
+    "ab": "alberta",
+    "bc": "british columbia",
+    "mb": "manitoba",
+    "nb": "new Brunswick",
+    "nl": "newfoundland and labrador",
+    "ns": "nova scotia",
+    "nt": "northwest territories",
+    "nun": "nunavut",
+    "ont": "ontario",
+    "pei": "prince edward island",
+    "qc": "quebec",
+    "sk": "saskatchewan",
+    "yt": "yukon",
 }
 
 # keywords found in forums that indicate that given comments are about a professional sex worker or social media image
