@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+    mongo:
+        image: mongo:latest
+        restart: always
+        container_name: mongodb
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER_ADMIN}
+            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD_ADMIN}
+            - MONGO_INITDB_DATABASE=${MONGO_DATABASE}
+            - MONGO_USER=${MONGO_USER}
+            - MONGO_PASSWORD=${MONGO_PASSWORD}
+        ports:
+            - 27017:27017
+        volumes: 
+            - ./tmp:/docker-entrypoint-initdb.d/mongo-init.sh #TODO: Fix this, it's creating an unncessary directory
+    spider:
+        build:
+            context: ./rp_spider
+            dockerfile: Dockerfile
+
+    pipeline:
+        build: 
+            context: ./pipeline
+            dockerfile: Dockerfile
+
+    # frontend:
+    #     build: ./react/Dockerfile
+
+    # nest_api:
+    #     build: ./api/Dockerfile

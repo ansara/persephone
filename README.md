@@ -1,12 +1,11 @@
 # Project Persephone
 
-Persephone is a scalable, cloud native revenge porn alert system. 
+Persephone is a scalable, cloud native "revenge porn" alert system. 
 
-Persephone scrapes illicit website uploads, identifies victim details using NLP, and then compiles case reports for possible intervention. This project is a work in progress.
+Revenge porn is the non-consensual and often illegal posting of intimate photos. These uploads often identify the victim by name and location, often leading to significant mental health trauma. Often the individual only becomes unaware that their photos have been uploaded once they have spread significantly.
+ 
+Pershephone aims to swiftly identify victims and refer them to legal and mental health resources as quickly as possible. The system scrapes illicit revenge porn forums, identifies victim details using NLP, and then compiles case reports for possible intervention.
 
-### Changelog (Updated June 2021):
------------
+Currently the system monitors geography-based web forums covering each US state, and over 20 countries.
 
-- Move Persephone to current GitHub repo
-
-test
+This project is still in development. Specifically, the API, frontend, and alert system is in progress.

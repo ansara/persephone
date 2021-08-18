@@ -11,10 +11,8 @@ environment:
 	@echo ">>> New virtual environment created using python3 venv module. Activating environment."
 	@bash -c "source venv/bin/activate"
 	python3 -m pip install -r requirements.txt
-	cd social_mapper/setup
 	pip install -r requirements.txt
 	cd ..
-
 
 reports:
 	python3 -m project/pipeline/__main__.py
